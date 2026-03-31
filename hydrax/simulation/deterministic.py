@@ -186,6 +186,7 @@ def run_interactive(  # noqa: PLR0912, PLR0915
 
             # Visualize the rollouts
             if show_traces:
+                trace_sites_np = np.array(rollouts.trace_sites)
                 ii = 0
                 for k in range(num_trace_sites):
                     for i in range(num_traces):
@@ -194,8 +195,8 @@ def run_interactive(  # noqa: PLR0912, PLR0915
                                 viewer.user_scn.geoms[ii],
                                 mujoco.mjtGeom.mjGEOM_LINE,
                                 trace_width,
-                                rollouts.trace_sites[i, j, k],
-                                rollouts.trace_sites[i, j + 1, k],
+                                trace_sites_np[i, j, k],
+                                trace_sites_np[i, j + 1, k],
                             )
                             ii += 1
 
