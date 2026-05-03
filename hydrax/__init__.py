@@ -1,10 +1,7 @@
 import os
-from pathlib import Path
 
-# Package root — defined before ``import jax`` so submodules that import
-# ``from hydrax import ROOT`` during hydrax's own ``__init__`` (e.g. circular
-# loads via optional stacks) always see a valid attribute.
-ROOT = str(Path(__file__).resolve().parent)
+# Load before ``jax`` so early imports of ``hydrax._paths.ROOT`` / ``hydrax.ROOT`` see a path.
+from ._paths import ROOT
 
 import jax
 

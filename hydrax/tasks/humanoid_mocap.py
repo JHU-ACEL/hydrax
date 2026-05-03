@@ -9,7 +9,7 @@ from huggingface_hub import hf_hub_download
 from mujoco import mjx
 from mujoco.mjx._src.math import quat_sub
 
-from hydrax import ROOT
+from hydrax._paths import ROOT
 from hydrax.task_base import Task
 
 

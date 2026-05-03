@@ -5,7 +5,7 @@ import jax.numpy as jnp
 import mujoco
 from mujoco import mjx
 
-from hydrax import ROOT
+from hydrax._paths import ROOT
 from hydrax.task_base import Task
 
 

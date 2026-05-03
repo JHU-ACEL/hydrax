@@ -8,7 +8,7 @@ import mujoco
 import mujoco.viewer
 import numpy as np
 
-from hydrax import ROOT
+from hydrax._paths import ROOT
 from hydrax.alg_base import SamplingBasedController
 from hydrax.utils.video import VideoRecorder
 
