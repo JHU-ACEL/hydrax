@@ -1,10 +1,12 @@
 import os
 from pathlib import Path
 
-import jax
+# Package root — defined before ``import jax`` so submodules that import
+# ``from hydrax import ROOT`` during hydrax's own ``__init__`` (e.g. circular
+# loads via optional stacks) always see a valid attribute.
+ROOT = str(Path(__file__).resolve().parent)
 
-# package root
-ROOT = str(Path(__file__).parent.absolute())
+import jax
 
 # Set XLA flags for better performance
 os.environ["XLA_FLAGS"] = "--xla_gpu_triton_gemm_any=true "
